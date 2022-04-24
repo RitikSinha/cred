@@ -1,16 +1,635 @@
-html,
+@import "./fonts.css";
+@import "./commonClasses.css";
+@import "./variables.css";
+@import "./animations.css";
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+  font-family: Gilroy, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-color: var(--bg-black);
+  color: var(--text);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app-rating {
+  padding: 200px 0px;
+  justify-content: space-around;
+}
+
+.app-rating-value {
+  font-size: 160px;
+  line-height: 120px;
+  padding-right: 16px;
+  font-weight: 700;
+}
+
+.app-rating-stars {
+  width: 179px;
+  height: 28px;
+}
+
+.app-rating-platform {
+  font-size: 60px;
+  line-height: 55px;
+  padding-left: 16px;
+  font-weight: 700;
+}
+
+.app-rating-block {
+  margin-bottom: 70px;
+}
+
+.app-rating-icon {
+  height: 30px;
+  margin-right: 6px;
+}
+
+.app-rating-button {
+  padding: 15px 30px !important;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+@media all and (max-width: 1279px) {
+  .app-rating {
+    padding: 100px 0px;
+  }
+  .app-rating-value {
+    font-size: 100px;
+  }
+  .app-rating-stars {
+    width: 120px;
+    height: 18px;
+  }
+  .app-rating-platform {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .app-rating {
+    padding: 70px 0px;
+    flex-direction: column;
+  }
+  .app-rating-value {
+    font-size: 90px;
+  }
+  .app-rating-platform {
+    font-size: 31px;
+    line-height: 32px;
+    text-align: left;
+    align-self: center;
+  }
+}
+.brands-love {
+  background-color: var(--white-bg);
+  color: var(--bg-black);
+  padding: 60px 0px;
+}
+
+.brands-love-heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.brands-love-banner {
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/brands-desktop.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  height: 50px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+@media all and (max-width: 767px) {
+  .brands-love-heading {
+    font-size: 18px;
+  }
+  .brands-love-banner {
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/brands-mobile.png);
+    background-size: contain;
+    height: 240px;
+    margin-top: 35px;
+    background-position: left center;
+  }
+}
+.button-wrapper {
+  cursor: pointer;
+  background-color: var(--white-bg);
+  color: var(--bg-black);
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px 65px;
+  border-radius: 40px;
+  width: max-content;
+}
+
+@media all and (max-width: 767px) {
+  .button-wrapper {
+    font-size: 18px;
+    padding: 16px 24px;
+  }
+}
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0px 40px;
+}
+
+.header-logo {
+  height: 66px;
+}
+
+.header-toggle-btn {
+  color: var(--text);
+}
+
+.header-nav-item {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px 20px 0px 36px;
+}
+
+.mobile-menu-wrapper {
+  position: relative;
+}
+
+.body-overflow-visible {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.mobile-menu-button-wrapper {
+  z-index: 2;
+}
+.mobile-menu {
+  position: fixed;
+  background-color: rgb(15, 15, 15);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  height: 100vh;
+  width: 100vw;
+  text-align: left;
+  padding: 2rem;
+  top: 0px;
+  left: 0px;
+  transition: transform 0.3s ease-in-out 0s;
+  z-index: 1;
+}
+
+.mobile-menu.overlay {
+  transform: translateX(0px);
+}
+
+.mobile-navbar {
+  margin-top: 95px;
+  overflow-y: scroll;
+  width: 90%;
+}
+
+.mobile-nav-item {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background-color: var(--bg-light-gray);
+  font-size: 14px;
+  font-weight: 600;
+}
+@media all and (max-width: 1279px) {
+  .header-logo {
+    height: 53px;
+  }
+  .header-nav-item {
+    margin: 0px 16px 0px 28px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .header {
+    padding-bottom: 50px;
+  }
+}
+
+.cred-experience {
+  background-color: var(--bg-blue);
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/money-matters-bg.jpg);
+}
+
+@media all and (max-width: 1279px) {
+  .cred-experience {
+    background-position: center bottom;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .cred-experience {
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/money-matters-bg-mobile.jpg);
+    min-height: 1150px;
+    background-position: right center;
+  }
+
+  .cred-experience-description {
+    margin-top: 100px;
+  }
+
+  .cred-experience-heading {
+    margin-top: 400px;
+  }
+}
+.cred-security {
+  background-color: var(--bg-purple);
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/security-bg.jpg);
+}
+
+@media all and (max-width: 1279px) {
+  .cred-security {
+    background-position: center bottom;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .cred-security {
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/security-bg-mobile.jpg);
+    min-height: 1150px;
+    background-position: right center;
+  }
+}
+.cred-story {
+  background-color: var(--bg-green);
+  min-height: 100vh;
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/trust-bg.jpg);
+  background-size: cover;
+  background-position: right bottom;
+  position: relative;
+}
+
+.story-wrapper {
+  align-items: flex-end;
+}
+
+.cred-story-heading-wrapper {
+  width: 50%;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.cred-story-heading {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  max-width: 80%;
+}
+
+.cred-story-detail {
+  width: 50%;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.cred-story-para {
+  font-size: 18px;
+  line-height: 28px;
+  margin-top: 20px;
+  max-width: 550px;
+}
+
+@media all and (max-width: 1279px) {
+  .cred-story-heading {
+    max-width: 100%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .cred-story {
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/trust-bg-mobile.jpg);
+  }
+
+  .cred-story-heading {
+    font-size: 55px;
+    line-height: 55px;
+    padding-bottom: 80px;
+  }
+
+  .cred-story-para {
+    font-size: 15px;
+  }
+
+  .story-wrapper {
+    flex-direction: column;
+    padding: 70px 0px;
+  }
+
+  .cred-story-heading-wrapper {
+    width: 100%;
+  }
+
+  .cred-story-detail {
+    width: 100%;
+  }
+}
+.feel-special {
+  background-color: var(--bg-red);
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/deserve-more-bg.jpg);
+}
+
+@media all and (max-width: 1279px) {
+  .feel-special {
+    background-position: center bottom;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .feel-special {
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/deserve-more-bg-mobile.jpg);
+    min-height: 1150px;
+    background-position: right center;
+  }
+}
+.hero-section-wrapper {
+  position: relative;
+}
+.hero-section {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: 106px;
+  font-weight: 700;
+}
+
+.hero-subheading {
+  line-height: 38px;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 35px 58px;
+}
+
+.hero-claim-label {
+  background-color: var(--bg-gray);
+  width: 100%;
+  position: absolute;
+  height: 72px;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.claim-arrow {
+  height: 11px;
+  margin: 7px 0px 0px 8px;
+}
+
+.claim-anchor {
+  margin-left: 17px;
+  color: var(--link-blue);
+}
+
+@media all and (max-width: 1279px) {
+  .hero-heading {
+    font-size: 82px;
+    line-height: 92px;
+  }
+
+  .hero-subheading {
+    font-size: 25px;
+  }
+
+  .hero-claim-label {
+    flex-direction: column;
+  }
+  .claim-anchor {
+    margin-left: 0px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .hero-section {
+    align-items: flex-start;
+    text-align: left;
+    min-height: 70vh;
+  }
+  .hero-heading {
+    font-size: 55px;
+    line-height: 47.5px;
+    width: 270px;
+    margin-top: 60px;
+  }
+  .hero-subheading {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 35px 0px;
+  }
+  .hero-claim-label {
+    height: 55px;
+    font-size: 13px;
+  }
+  .claim-arrow {
+    height: 6px;
+    margin: 2px 0px 0px 3px;
+  }
+}
+.mobile-scroll {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.scroll-full-screen-wrapper {
+  width: 50%;
+}
+
+.scroll-full-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mobile-mockup-wrapper {
+  width: 50%;
+}
+
+.mobile-mockup {
+  position: sticky;
+  top: 150px;
+  transform: translateX(30%);
+  width: 350px;
+  height: 600px;
+  box-shadow: var(--mobile-box-shadow);
+  border-radius: 46px;
+  padding: 16px 14px;
+  max-height: 100vh;
+}
+
+.mobile-mockup-screen {
+  background-color: var(--mobile-bg);
+  overflow: hidden;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.mobile-screen-img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.screen-text {
+  opacity: 0;
+  padding-bottom: 80px;
+}
+
+.text-visible {
+  opacity: 1;
+  transition: 0.75s;
+}
+
+.screen-heading {
+  font-size: 105px;
+  font-weight: 700;
+  line-height: 105px;
+}
+
+.screen-description {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 52px;
+}
+
+@media all and (max-width: 1279px) {
+  .mobile-scroll {
+    padding-bottom: 30px;
+  }
+  .mobile-mockup {
+    width: 272px;
+    height: 480px;
+  }
+  .screen-heading {
+    font-size: 70px;
+    line-height: 70px;
+  }
+  .mobile-mockup {
+    transform: translateX(10%);
+  }
+
+  .screen-description {
+    font-size: 18px;
+    margin-top: 44px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .mobile-mockup {
+    width: 272px;
+    height: 480px;
+  }
+  .screen-heading {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .scroll-full-screen-wrapper {
+    width: 100%;
+  }
+}
+.product-showcase {
+  width: 100vw;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/video-bg.png);
+  background-size: cover;
+  background-position: right top;
+}
+
+.showcase-wrapper {
+  min-height: 70%;
+}
+
+.showcase-ui {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+}
+
+.showcase-mockup-1 {
+  opacity: 1;
+  transform: translate(-160%, 25%);
+  z-index: 98;
+}
+
+.showcase-mockup-2 {
+  opacity: 1;
+  transform: translate(-105%, 15%);
+  z-index: 99;
+}
+.showcase-mockup-3 {
+  opacity: 1;
+  transform: translate(-50%, 5%);
+  z-index: 100;
+}
+.showcase-mockup-4 {
+  opacity: 1;
+  transform: translate(5%, 15%);
+  z-index: 99;
+}
+.showcase-mockup-5 {
+  opacity: 1;
+  transform: translate(60%, 25%);
+  z-index: 98;
+}
+
+@media all and (max-width: 1279px) {
+  .product-showcase {
+    height: 620px;
+  }
+  .showcase-ui {
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .product-showcase {
+    height: 450px;
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/video-bg-mobile.png);
+  }
+  .showcase-ui {
+    width: 170px;
+  }
+}
+.window-peak {
+  background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/image-mock.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.button-wrapper {
+  cursor: pointer;
+  background-color: var(--white-bg);
+  color: var(--bg-black);
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px 65px;
+  border-radius: 40px;
+  width: max-content;
+}
+
+@media all and (max-width: 767px) {
+  .button-wrapper {
+    font-size: 18px;
+    padding: 16px 24px;
+  }
 }
